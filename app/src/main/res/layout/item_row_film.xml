@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/activity_margin">
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="45sp"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="28sp"
+        android:textAlignment="center"/>
+    <ImageView
+        android:id="@+id/title_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/number"
+        tools:src="@color/colorAccent"
+        android:layout_toEndOf="@id/number" />
+</RelativeLayout>

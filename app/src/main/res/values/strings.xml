@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Malba Cinematic Universe</string>
+    <string name="listi">List</string>
+    <string name="gridi">Grid</string>
+    <string name="with_cardviewi">with CardView</string>
+    <string name="favoritei">FAVORITE</string>
+    <string name="sharei">SHARE</string>
+    <string name="detaili">Detail</string>
+</resources>
