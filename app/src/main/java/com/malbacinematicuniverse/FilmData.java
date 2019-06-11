@@ -189,8 +189,8 @@ public class FilmData {
         for (String[] aData : data){
             film = new Film();
             film.setNama(aData[0]);
-//            String cropDes = aData[1].substring(0, 4);
-            film.setIkhtisar(aData[1]);
+            String cropDes = aData[1].substring(0, 4);
+            film.setIkhtisar(cropDes);
             film.setTanggalRilis(aData[2]);
             film.setDurasi(aData[3]);
             film.setTitleCard(aData[9]);

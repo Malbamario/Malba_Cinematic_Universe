@@ -46,35 +46,34 @@ public class CardViewFilmAdapter extends RecyclerView.Adapter<CardViewFilmAdapte
 
    @Override
    public void onBindViewHolder(@NonNull CardViewViewHolder cardViewViewHolder, int i) {
+      Glide.with(context)
+              .load(getListFilm().get(i).getPoster())
+              .apply(new RequestOptions().override(382, 566))
+              .into(cardViewViewHolder.imgPoster);
+
       cardViewViewHolder.tvName.setText(getListFilm().get(i).getNama());
-//      Glide.with(context)
-//              .load(getListFilm().get(i).getPoster())
-//              .apply(new RequestOptions().override(382, 566))
-//              .into(cardViewViewHolder.imgPoster);
-//
-//      cardViewViewHolder.tvName.setText(getListFilm().get(i).getNama());
-//      cardViewViewHolder.tvDes.setText(getListFilm().get(i).getIkhtisar());
-//
-//      cardViewViewHolder.btnSetShare.setOnClickListener(new CustomOnItemClickListerner(i, new CustomOnItemClickListerner.OnItemClickCallback() {
-//         @Override
-//         public void onItemClicked(View view, int position) {
-//            Toast.makeText(context, getListFilm().get(position).getNama()+" shared", Toast.LENGTH_SHORT).show();
-//         }
-//      }));
-//
-//      cardViewViewHolder.btnSetDetail.setOnClickListener(new CustomOnItemClickListerner(i, new CustomOnItemClickListerner.OnItemClickCallback() {
-//         @Override
-//         public void onItemClicked(View view, int position) {
-//            Intent intent = new Intent(context, DetailFilmActivity.class);
-//            intent.putExtra(DetailFilmActivity.EXTRA_INDEX, getListFilm().get(position).getIndex());
-//            context.startActivity(intent);
-//         }
-//      }));
+      cardViewViewHolder.tvDes.setText(getListFilm().get(i).getIkhtisar());
+
+      cardViewViewHolder.btnSetShare.setOnClickListener(new CustomOnItemClickListerner(i, new CustomOnItemClickListerner.OnItemClickCallback() {
+         @Override
+         public void onItemClicked(View view, int position) {
+            Toast.makeText(context, getListFilm().get(position).getNama()+" shared", Toast.LENGTH_SHORT).show();
+         }
+      }));
+
+      cardViewViewHolder.btnSetDetail.setOnClickListener(new CustomOnItemClickListerner(i, new CustomOnItemClickListerner.OnItemClickCallback() {
+         @Override
+         public void onItemClicked(View view, int position) {
+            Intent intent = new Intent(context, DetailFilmActivity.class);
+            intent.putExtra(DetailFilmActivity.EXTRA_INDEX, getListFilm().get(position).getIndex());
+            context.startActivity(intent);
+         }
+      }));
    }
 
    @Override
    public int getItemCount() {
-      return 0;
+      return getListFilm().size();
    }
 
    public class CardViewViewHolder extends RecyclerView.ViewHolder {
