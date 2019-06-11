@@ -8,12 +8,11 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.malbacinematicuniverse.R;
 
-import java.util.ArrayList;
-
 public class DetailFilmActivity extends AppCompatActivity {
 
     public static final String EXTRA_NAMA = "extra_nama";
-    private ArrayList<Film> list;
+
+    private Film list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,21 +32,21 @@ public class DetailFilmActivity extends AppCompatActivity {
                   img_poster     = findViewById(R.id.img_poster);
 
         String nama = getIntent().getStringExtra(EXTRA_NAMA);
-        list = new ArrayList<>();
-        list.addAll(FilmData.getData(nama));
-        tv_ikhtisar.setText(list.get(0).getIkhtisar());
-        tv_tgl_rilis.setText(list.get(0).getTanggalRilis());
-        tv_durasi.setText(list.get(0).getDurasi());
-        tv_rating.setText(list.get(0).getRating());
-        tv_aliran.setText(list.get(0).getAliran());
-        tv_sutradara.setText(list.get(0).getSutradara());
-        tv_penulis.setText(list.get(0).getPenulis());
-        tv_aktor.setText(list.get(0).getAktor());
+        FilmData.getData(nama);
+        list = new Film();
+        tv_ikhtisar.setText(list.getIkhtisar());
+        tv_tgl_rilis.setText(list.getTanggalRilis());
+        tv_durasi.setText(list.getDurasi());
+        tv_rating.setText(list.getRating());
+        tv_aliran.setText(list.getAliran());
+        tv_sutradara.setText(list.getSutradara());
+        tv_penulis.setText(list.getPenulis());
+        tv_aktor.setText(list.getAktor());
         Glide.with(this)
-             .load(list.get(0).getTitleCard())
+             .load(list.getTitleCard())
              .into(img_title_card);
         Glide.with(this)
-             .load(list.get(0).getPoster())
+             .load(list.getPoster())
              .into(img_poster);
     }
 }
