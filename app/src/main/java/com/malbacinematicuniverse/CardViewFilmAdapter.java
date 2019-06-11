@@ -1,5 +1,6 @@
 package com.malbacinematicuniverse;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -44,30 +45,31 @@ public class CardViewFilmAdapter extends RecyclerView.Adapter<CardViewFilmAdapte
    }
 
    @Override
-   public void onBindViewHolder(@NonNull CardViewViewHolder cardViewViewHolder, final int i) {
-      Glide.with(context)
-              .load(getListFilm().get(i).getPoster())
-              .apply(new RequestOptions().override(382, 566))
-              .into(cardViewViewHolder.imgPoster);
-
+   public void onBindViewHolder(@NonNull CardViewViewHolder cardViewViewHolder, int i) {
       cardViewViewHolder.tvName.setText(getListFilm().get(i).getNama());
-      cardViewViewHolder.tvDes.setText(getListFilm().get(i).getIkhtisar());
-
-      cardViewViewHolder.btnSetShare.setOnClickListener(new CustomOnItemClickListerner(i, new CustomOnItemClickListerner.OnItemClickCallback() {
-         @Override
-         public void onItemClicked(View view, int position) {
-            Toast.makeText(context, getListFilm().get(i).getNama()+" shared", Toast.LENGTH_SHORT).show();
-         }
-      }));
-
-      cardViewViewHolder.btnSetDetail.setOnClickListener(new CustomOnItemClickListerner(i, new CustomOnItemClickListerner.OnItemClickCallback() {
-         @Override
-         public void onItemClicked(View view, int position) {
-            Intent intent = new Intent(context, DetailFilmActivity.class);
-            intent.putExtra(DetailFilmActivity.EXTRA_NAMA, getListFilm().get(i).getNama());
-            context.startActivity(intent);
-         }
-      }));
+//      Glide.with(context)
+//              .load(getListFilm().get(i).getPoster())
+//              .apply(new RequestOptions().override(382, 566))
+//              .into(cardViewViewHolder.imgPoster);
+//
+//      cardViewViewHolder.tvName.setText(getListFilm().get(i).getNama());
+//      cardViewViewHolder.tvDes.setText(getListFilm().get(i).getIkhtisar());
+//
+//      cardViewViewHolder.btnSetShare.setOnClickListener(new CustomOnItemClickListerner(i, new CustomOnItemClickListerner.OnItemClickCallback() {
+//         @Override
+//         public void onItemClicked(View view, int position) {
+//            Toast.makeText(context, getListFilm().get(position).getNama()+" shared", Toast.LENGTH_SHORT).show();
+//         }
+//      }));
+//
+//      cardViewViewHolder.btnSetDetail.setOnClickListener(new CustomOnItemClickListerner(i, new CustomOnItemClickListerner.OnItemClickCallback() {
+//         @Override
+//         public void onItemClicked(View view, int position) {
+//            Intent intent = new Intent(context, DetailFilmActivity.class);
+//            intent.putExtra(DetailFilmActivity.EXTRA_INDEX, getListFilm().get(position).getIndex());
+//            context.startActivity(intent);
+//         }
+//      }));
    }
 
    @Override

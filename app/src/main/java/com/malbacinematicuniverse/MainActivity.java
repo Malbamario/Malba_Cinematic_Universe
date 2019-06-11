@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showSelectedFilm(String film){
         Intent intent = new Intent(this, DetailFilmActivity.class);
-        intent.putExtra(DetailFilmActivity.EXTRA_NAMA, film);
+        intent.putExtra(DetailFilmActivity.EXTRA_INDEX, film);
         startActivity(intent);
     }
 
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         ItemClickSupport.addTo(rvFilm).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-                showSelectedFilm(list.get(position).getNama());
+                showSelectedFilm(list.get(position).getIndex());
             }
         });
     }
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         ItemClickSupport.addTo(rvFilm).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-                showSelectedFilm(list.get(position).getNama());
+                showSelectedFilm(list.get(position).getIndex());
             }
         });
     }

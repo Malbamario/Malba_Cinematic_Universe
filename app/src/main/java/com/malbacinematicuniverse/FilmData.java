@@ -3,24 +3,12 @@ package com.malbacinematicuniverse;
 import java.util.ArrayList;
 
 public class FilmData {
-    public static String[] des = new String[]{
-            "Marvel Studios menghadirkan bersama dengan Paramount Pictures \"Marvel's The Avengers\"--tim pahlawan super seumur hidup, dengan ikon pahlawan super Marvel Iron Man,  the Incredible Hulk, Thor, Captain America, Hawkeye and Black Widow. " +
-                    "Saat musuh yang tak terduga datang mengancam kedamaian dan keamanan dunia, Nick Fury, Direktur agen penjaga kedamaian internasional yang dikenal sebagai S.H.I.E.L.D., sadar bahwa dia membutuhkan sebuah tim untuk menyelamatkan dunia dari ambang bencana. " +
-                    "Menjangkau dunia, upaya perekrutan yang berani pun dimulai.",
-            "Iron Man 2008 menceritakan kisah Tony Stark, seorang industrialis miliarder dan penemu jenius yang diculik dan dipaksa untuk membangun senjata yang ampuh untuk menghancurkan. " +
-                    "Malahan, menggunakan kecerdasan dan kecerdikannya, Tony membangun baju zirah berteknologi tinggi dan lolos dari penawanan. " +
-                    "Ketika dia mengungkap rencana jahat dengan implikasi global, dia mengenakan baju besinya yang kuat dan bersumpah untuk melindungi dunia sebagai Iron Man.",
-            "\"Captain America: The First Avenger\" Marvel berfokus pada hari-hari awal Marvel Universe ketika Steve Rogers sukarela untuk berpartisipasi dalam program eksperimental " +
-                    "yang mengubahnya menjadi Super Soldier yang dikenal sebagai Captain America.",
-            "Sebagai putra Odin, raja para dewa Norse, Thor akan segera mewarisi takhta Asgard dari ayahnya yang sudah lanjut usia. " +
-                    "Namun, pada hari dia dinobatkan, Thor bereaksi dengan brutal ketika musuh para dewa, Frost Giants, memasuki istana yang melanggar perjanjian mereka. " +
-                    "Sebagai hukuman, Odin mengusir Thor ke Bumi. Sementara Loki, saudara lelaki Thor, merencanakan kejahatan di Asgard, Thor, yang sekarang kehilangan kekuatannya, menghadapi ancaman terbesarnya.",
-    };
-
     public static String[][] data = new String[][] {
             {
                     "The Avengers",
-                    des[0],
+                    "Marvel Studios menghadirkan bersama dengan Paramount Pictures \"Marvel's The Avengers\"--tim pahlawan super seumur hidup, dengan ikon pahlawan super Marvel Iron Man,  the Incredible Hulk, Thor, Captain America, Hawkeye and Black Widow. " +
+                            "Saat musuh yang tak terduga datang mengancam kedamaian dan keamanan dunia, Nick Fury, Direktur agen penjaga kedamaian internasional yang dikenal sebagai S.H.I.E.L.D., sadar bahwa dia membutuhkan sebuah tim untuk menyelamatkan dunia dari ambang bencana. " +
+                            "Menjangkau dunia, upaya perekrutan yang berani pun dimulai.",
                     "4 Mei 2012",
                     "143 menit",
                     "PG-13 / R 13+",
@@ -34,7 +22,9 @@ public class FilmData {
             },
             {
                     "Iron Man",
-                    des[1],
+                    "Iron Man 2008 menceritakan kisah Tony Stark, seorang industrialis miliarder dan penemu jenius yang diculik dan dipaksa untuk membangun senjata yang ampuh untuk menghancurkan. " +
+                            "Malahan, menggunakan kecerdasan dan kecerdikannya, Tony membangun baju zirah berteknologi tinggi dan lolos dari penawanan. " +
+                            "Ketika dia mengungkap rencana jahat dengan implikasi global, dia mengenakan baju besinya yang kuat dan bersumpah untuk melindungi dunia sebagai Iron Man.",
                     "2 Mei 2008",
                     "126 menit",
                     "PG-13 / R 13+",
@@ -48,7 +38,8 @@ public class FilmData {
             },
             {
                     "Captain America: The First Avenger",
-                    des[2],
+                    "\"Captain America: The First Avenger\" Marvel berfokus pada hari-hari awal Marvel Universe ketika Steve Rogers sukarela untuk berpartisipasi dalam program eksperimental " +
+                            "yang mengubahnya menjadi Super Soldier yang dikenal sebagai Captain America.",
                     "22 Juli 2011",
                     "124 menit",
                     "PG-13 / R 13+",
@@ -62,7 +53,9 @@ public class FilmData {
             },
             {
                     "Thor",
-                    des[3],
+                    "Sebagai putra Odin, raja para dewa Norse, Thor akan segera mewarisi takhta Asgard dari ayahnya yang sudah lanjut usia. " +
+                            "Namun, pada hari dia dinobatkan, Thor bereaksi dengan brutal ketika musuh para dewa, Frost Giants, memasuki istana yang melanggar perjanjian mereka. " +
+                            "Sebagai hukuman, Odin mengusir Thor ke Bumi. Sementara Loki, saudara lelaki Thor, merencanakan kejahatan di Asgard, Thor, yang sekarang kehilangan kekuatannya, menghadapi ancaman terbesarnya.",
                     "6 Mei 2011",
                     "115 menit",
                     "PG-13 / R 13+",
@@ -206,28 +199,5 @@ public class FilmData {
             list.add(film);
         }
         return list;
-    }
-
-    public static ArrayList<Film> getData(String i){
-       Film film;
-       ArrayList<Film> list = new ArrayList<>();
-       for (String[] aData : data){
-          if(aData[0]==i){
-             film = new Film();
-             film.setNama(aData[0]);
-             film.setIkhtisar(aData[1]);
-             film.setTanggalRilis(aData[2]);
-             film.setDurasi(aData[3]);
-             film.setRating(aData[4]);
-             film.setAliran(aData[5]);
-             film.setSutradara(aData[6]);
-             film.setPenulis(aData[7]);
-             film.setAktor(aData[8]);
-             film.setPoster(aData[9]);
-             film.setTitleCard(aData[10]);
-             list.add(film);
-          }
-       }
-       return list;
     }
 }

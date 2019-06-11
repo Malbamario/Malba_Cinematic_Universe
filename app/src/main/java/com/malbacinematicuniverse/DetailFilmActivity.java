@@ -1,5 +1,6 @@
 package com.malbacinematicuniverse;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
@@ -10,7 +11,7 @@ import com.example.malbacinematicuniverse.R;
 
 public class DetailFilmActivity extends AppCompatActivity {
 
-    public static final String EXTRA_NAMA = "extra_nama";
+    public static final String EXTRA_INDEX = "extra_index";
 
     private Film list;
 
@@ -31,9 +32,23 @@ public class DetailFilmActivity extends AppCompatActivity {
         ImageView img_title_card = findViewById(R.id.img_title_card),
                   img_poster     = findViewById(R.id.img_poster);
 
-        String nama = getIntent().getStringExtra(EXTRA_NAMA);
-        FilmData.getData(nama);
+        String index = getIntent().getStringExtra(EXTRA_INDEX);
         list = new Film();
+        for (String[] aData : FilmData.data){
+            if (index.equals(aData[11])){
+                list.setNama(aData[0]);
+                list.setIkhtisar(aData[1]);
+                list.setTanggalRilis(aData[2]);
+                list.setDurasi(aData[3]);
+                list.setRating(aData[4]);
+                list.setAliran(aData[5]);
+                list.setSutradara(aData[6]);
+                list.setPenulis(aData[7]);
+                list.setAktor(aData[8]);
+                list.setTitleCard(aData[9]);
+                list.setPoster(aData[10]);
+            }
+        }
         tv_ikhtisar.setText(list.getIkhtisar());
         tv_tgl_rilis.setText(list.getTanggalRilis());
         tv_durasi.setText(list.getDurasi());
