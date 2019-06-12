@@ -1,6 +1,5 @@
 package com.malbacinematicuniverse;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -11,10 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.example.malbacinematicuniverse.R;
 
 import java.util.ArrayList;
@@ -48,18 +45,9 @@ public class CardViewFilmAdapter extends RecyclerView.Adapter<CardViewFilmAdapte
    public void onBindViewHolder(@NonNull CardViewViewHolder cardViewViewHolder, int i) {
       Glide.with(context)
               .load(getListFilm().get(i).getPoster())
-              .apply(new RequestOptions().override(382, 566))
               .into(cardViewViewHolder.imgPoster);
 
       cardViewViewHolder.tvName.setText(getListFilm().get(i).getNama());
-      cardViewViewHolder.tvDes.setText(getListFilm().get(i).getIkhtisar());
-
-      cardViewViewHolder.btnSetShare.setOnClickListener(new CustomOnItemClickListerner(i, new CustomOnItemClickListerner.OnItemClickCallback() {
-         @Override
-         public void onItemClicked(View view, int position) {
-            Toast.makeText(context, getListFilm().get(position).getNama()+" shared", Toast.LENGTH_SHORT).show();
-         }
-      }));
 
       cardViewViewHolder.btnSetDetail.setOnClickListener(new CustomOnItemClickListerner(i, new CustomOnItemClickListerner.OnItemClickCallback() {
          @Override
@@ -78,16 +66,14 @@ public class CardViewFilmAdapter extends RecyclerView.Adapter<CardViewFilmAdapte
 
    public class CardViewViewHolder extends RecyclerView.ViewHolder {
       public ImageView imgPoster;
-      public TextView tvName, tvDes;
-      public Button btnSetShare, btnSetDetail;
+      public TextView tvName;
+      public Button btnSetDetail;
 
       public CardViewViewHolder(@NonNull View itemView) {
          super(itemView);
 
          imgPoster = itemView.findViewById(R.id.img_item_poster);
          tvName = itemView.findViewById(R.id.tv_nama_cv);
-         tvDes = itemView.findViewById(R.id.tv_des_cv);
-         btnSetShare = itemView.findViewById(R.id.btn_set_share);
          btnSetDetail = itemView.findViewById(R.id.btn_set_detail);
       }
    }

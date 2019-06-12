@@ -46,7 +46,6 @@ public class ListFilmAdapter extends RecyclerView.Adapter<ListFilmAdapter.FilmVi
 
         Glide.with(context)
                 .load(getListFilm().get(i).getTitleCard())
-                .apply(new RequestOptions().override(180, 100))
                 .into(filmViewHolder.title_card);
     }
 

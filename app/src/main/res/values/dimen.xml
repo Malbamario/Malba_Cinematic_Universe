@@ -1,4 +1,4 @@
 <resources>
     <dimen name="activity_margin">16dp</dimen>
-    <dimen name="poster_margin">90dp</dimen>
+    <dimen name="poster_margin">70dp</dimen>
 </resources>
