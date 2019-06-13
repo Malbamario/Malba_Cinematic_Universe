@@ -21,9 +21,9 @@
         android:textColor="@color/backgroundBlack"/>
     <ImageView
         android:id="@+id/title_card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/wcMp"
         android:layout_toRightOf="@id/number"
         tools:src="@color/colorAccent"
-        android:layout_toEndOf="@id/number" />
+        android:layout_toEndOf="@id/number"
+        android:contentDescription="Title_Card"/>
 </RelativeLayout>

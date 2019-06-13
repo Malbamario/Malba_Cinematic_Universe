@@ -23,8 +23,7 @@
             android:layout_marginBottom="13dp"/>
         <LinearLayout
             android:id="@+id/button_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/wcWc"
             android:layout_alignBottom="@id/img_item_poster"
             android:layout_alignParentRight="true"
             android:layout_gravity="bottom"
@@ -50,6 +49,7 @@
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
             tools:src="@drawable/poster"
+            android:contentDescription="poster"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp" />

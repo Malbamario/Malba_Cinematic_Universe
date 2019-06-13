@@ -3,20 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    style="@style/wcMp"
     tools:context="com.malbacinematicuniverse.DetailFilmActivity">
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/wcMp"
         android:orientation="vertical">
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_margin">
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/wcMp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 android:src="@drawable/title_card_background"
@@ -29,35 +26,29 @@
                 android:layout_margin="@dimen/activity_margin"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
-                tools:src="@drawable/title_card"/>
+                tools:src="@drawable/title_card"
+                android:contentDescription="Title_Card"/>
         </FrameLayout>
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/wcWc"
             android:orientation="vertical"
             android:layout_marginLeft="@dimen/activity_margin"
             android:layout_marginStart="@dimen/activity_margin"
             android:layout_marginBottom="7dp">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
+                style="@style/ikhtisar"
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold"
                 android:text="           /"
                 android:textSize="17sp"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/ikhtisar"
                 android:textColor="@android:color/black"
                 android:textStyle="italic"
-                android:fontFamily="sans-serif-black"
                 android:text="IKHTISAR"
                 android:textSize="24sp"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
+                style="@style/ikhtisar"
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold"
                 android:text="       /"
@@ -66,163 +57,90 @@
 
         <TextView
             android:id="@+id/tv_ikhtisar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_margin"
-            android:layout_marginRight="@dimen/activity_margin"
-            android:layout_marginBottom="@dimen/activity_margin"
+            style="@style/ikhtisar.fill"
             android:textColor="#312B27"
-            android:fontFamily="sans-serif-condensed"
-            android:textSize="18sp"
             tools:text="@tools:sample/lorem/random" />
 
         <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_margin"
-            android:layout_marginRight="@dimen/activity_margin"
-            android:layout_marginBottom="@dimen/activity_margin">
+            style="@style/tableLayout">
 
-            <TableRow android:layout_marginBottom="8dp">
-
+            <TableRow style="@style/tableRow">
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/activity_margin"
-                    android:text="Tanggal Rilis"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginEnd="@dimen/activity_margin" />
+                    style="@style/tableRow.field"
+                    android:text="Tanggal Rilis"/>
 
                 <TextView
                     android:id="@+id/tv_tgl_rilis"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                    style="@style/tableRow.fill"
                     tools:text="22 April 2000" />
             </TableRow>
 
-            <TableRow android:layout_marginBottom="8dp">
-
+            <TableRow style="@style/tableRow">
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Durasi"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    style="@style/tableRow.field"
+                    android:text="Durasi"/>
 
                 <TextView
                     android:id="@+id/tv_durasi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_weight="1"
-                    android:textStyle="bold"
+                    style="@style/tableRow.fill"
                     tools:text="123 menit" />
             </TableRow>
 
-            <TableRow android:layout_marginBottom="8dp">
-
+            <TableRow style="@style/tableRow">
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rating"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    style="@style/tableRow.field"
+                    android:text="Rating"/>
 
                 <TextView
                     android:id="@+id/tv_rating"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_weight="1"
-                    android:textStyle="bold"
+                    style="@style/tableRow.fill"
                     tools:text="PG-13 / R 13+" />
             </TableRow>
 
-            <TableRow android:layout_marginBottom="8dp">
-
+            <TableRow style="@style/tableRow">
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Aliran"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    style="@style/tableRow.field"
+                    android:text="Aliran"/>
 
                 <TextView
                     android:id="@+id/tv_aliran"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_weight="1"
-                    android:textStyle="bold"
+                    style="@style/tableRow.fill"
                     tools:text="Laga, Petualangan, Fiksi Ilmiah, Pahlawan Super, Fantasi" />
             </TableRow>
 
-            <TableRow android:layout_marginBottom="8dp">
+            <TableRow style="@style/tableRow">
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sutradara"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    style="@style/tableRow.field"
+                    android:text="Sutradara"/>
                 <TextView
                     android:id="@+id/tv_sutradara"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_weight="1"
-                    android:textStyle="bold"
+                    style="@style/tableRow.fill"
                     tools:text="Jon Favreau" />
             </TableRow>
 
-            <TableRow android:layout_marginBottom="8dp">
+            <TableRow style="@style/tableRow">
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Penulis"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    style="@style/tableRow.field"
+                    android:text="Penulis"/>
                 <TextView
                     android:id="@+id/tv_penulis"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_weight="1"
-                    android:textStyle="bold"
+                    style="@style/tableRow.fill"
                     tools:text="Mark Fergus, Hawk Ostby, Art Marcum, Matt Holloway" />
             </TableRow>
 
-            <TableRow android:layout_marginBottom="8dp">
+            <TableRow style="@style/tableRow">
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Aktor"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    style="@style/tableRow.field"
+                    android:text="Aktor"/>
                 <TextView
                     android:id="@+id/tv_aktor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_weight="1"
-                    android:textStyle="bold"
+                    style="@style/tableRow.fill"
                     tools:text="Chris Hemsworth, Natalie Portman, Tom Hiddleston, Stellan Skarsgård, Colm Feore, Ray Stevenson, Idris Elba, Kat Dennings, Rene Russo, Anthony Hopkins, Tadanobu Asano, Josh Dallas, Jaimie Alexander" />
             </TableRow>
         </TableLayout>
         <ImageView
             android:id="@+id/img_poster"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/wcMp"
             android:scaleType="fitXY"
             android:adjustViewBounds="true"
             android:layout_marginTop="@dimen/activity_margin"

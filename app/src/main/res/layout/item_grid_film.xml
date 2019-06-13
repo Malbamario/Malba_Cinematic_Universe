@@ -6,10 +6,10 @@
     android:layout_height="wrap_content">
     <ImageView
         android:id="@+id/img_poster"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/wcMp"
         android:layout_margin="1dp"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
+        android:contentDescription="poster"
         tools:src="@drawable/poster"/>
 </LinearLayout>
